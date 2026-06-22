@@ -1,0 +1,121 @@
+<!-- insert your HTML code here -->
+<!-- don't forget to make two other HTML documents also -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Nguyen Personal Training</title>
+        <link rel="stylesheet" href="css/custom.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://unpkg.com/alpinejs"></script>
+    </head>
+    <body>
+        <!--Nav Bar Code Start-->
+        <nav x-data="{menuOpen: false}" class="bg-gray-900 text-white">
+            <div class="flex items-center justify-between p-4 max-w-6xl mx-auto">
+                <a href="professional_site.html" class="font-bold text-xl">
+                    Nguyen Personal Training
+                </a>
+                <button
+                    @click="menuOpen = !menuOpen"
+                    class="md:hidden text-2xl"
+                    aria-label="Toggle menu"
+                >
+                    &#9776;
+                </button>
+                <div
+                    :class="menuOpen ? 'block' : 'hidden'"
+                    class="md:block absolute md:static top-16 left-0 right-0
+                    bg-gray-900 md:bg-transparent p-4 md:p-0
+                    md:flex md:gap-12 md:items-center"
+                >
+                    <a href="professional_site.html" class="block md:inline py-2 md:py-0 hover:text-gray-300">Home</a>
+                    <a href="services.html" class="block md:inline py-2 md:py-0 hover:text-gray-300">What We Offer</a>
+                    <a href="faq.html" class="block md:inline py-2 md:py-0 hover:text-gray-300">Frequently Asked Questions</a>
+                </div>
+            </div>
+        </nav>
+        <!--Nav Bar Code End-->
+        <div class="max-w-6xl mx-auto px-4">
+            <!--Responsive Layout by changing text size, vertical padding, and columns displayed depending on screen size-->
+            <section class="text-center py-8 md:py-16">
+                <h1 class="text-2xl md:text-4xl font-bold">
+                    Personal Fitness Done Different
+                </h1>
+                <p class="mt-4 text-gray-600">
+                    Taught my real trainers for real people
+                </p>
+                <a href="services.html" class="button-main mt-6">
+                    Ready to book?
+                </a>
+            </section>
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
+                <div class="info-card">
+                    <h2 class="font-bold text-lg">
+                        Licensed, Experienced Trainers
+                    </h2>
+                    <p class="mt-2 text-gray-600">
+                        Our trainers have 4+ years of training and are certified by the ISSA
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h2 class="font-bold text-lg">
+                        Here for YOU
+                    </h2>
+                    <p class="mt-2 text-gray-600">
+                        Reach out to our trainers through text for quick, helpful responses
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h2 class="font-bold text-lg">
+                        Personable
+                    </h2>
+                    <p class="mt-2 text-gray-600">
+                        We aren't just your personal trainer, but your friend too
+                    </p>
+                </div>
+            </section>
+            <!--Responsive Layout by changing text size, vertical padding, and columns displayed depending on screen size end-->
+            <!--Carousel start-->
+            <section class="py-8">
+                <h2 class="text-2xl font-bold mb-6">
+                    What the Nguyen experience looks like
+                </h2>
+                <div
+                    x-data="{
+                        current:0,
+                        images: [
+                            'images/carousel1.jpg',
+                            'images/carousel2.jpg',
+                            'images/carousel3.jpg'
+                        ]
+                    }"
+                    class="relative max-w-2xl mx-auto"
+                >
+                    <img :src="images[current]" class="w-full rounded-lg shadow" />
+                    <button
+                        @click="current = (current - 1 + images.length) % images.length"
+                        class="button-carousel absolute left-2 top-1/2 -translate-y-1/2 px-3 py-2 rounded shadow"
+                    >
+                        &lsaquo;
+                    </button>
+                    <button
+                        @click="current = (current + 1) % images.length"
+                        class="button-carousel absolute right-2 top-1/2 -translate-y-1/2 px-3 py-2 rounded shadow"
+                    >
+                        &rsaquo;
+                    </button>
+                    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+                        <template x-for="(image, index) in images" :key="index">
+                            <button
+                                @click="current = index"
+                                :class="current === index ? 'bg-white' : 'bg-white/50'"
+                                class="w-2 h-2 rounded-full"
+                            ></button>
+                        </template>
+                    </div>
+                </div>
+            </section>
+            <!--Carousel end-->
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Nguyen Personal Training</title>
+        <link rel="stylesheet" href="css/custom.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://unpkg.com/alpinejs"></script>
+    </head>
+    <body>
+        <!--Nav Bar Code Start-->
+        <nav x-data="{menuOpen: false}" class="bg-gray-900 text-white">
+            <div class="flex items-center justify-between p-4 max-w-6xl mx-auto">
+                <a href="professional_site.html" class="font-bold text-xl">
+                    Nguyen Personal Training
+                </a>
+                <button
+                    @click="menuOpen = !menuOpen"
+                    class="md:hidden text-2xl"
+                    aria-label="Toggle menu"
+                >
+                    &#9776;
+                </button>
+                <div
+                    :class="menuOpen ? 'block' : 'hidden'"
+                    class="md:block absolute md:static top-16 left-0 right-0
+                    bg-gray-900 md:bg-transparent p-4 md:p-0
+                    md:flex md:gap-12 md:items-center"
+                >
+                    <a href="professional_site.html" class="block md:inline py-2 md:py-0 hover:text-gray-300">Home</a>
+                    <a href="services.html" class="block md:inline py-2 md:py-0 hover:text-gray-300">What We Offer</a>
+                    <a href="faq.html" class="block md:inline py-2 md:py-0 hover:text-gray-300">Frequently Asked Questions</a>
+                </div>
+            </div>
+        </nav>
+        <!--Nav Bar Code End-->
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-2xl fond-bold mb-6">
+                Test
+            </h1>
+            <!--Accordian Start-->
+            <div class="space-y-2 max-w-2xl">
+                <div x-data="{open: false}" class="item-faq">
+                    <button @click="open = !open" class="question-faq">
+                        <span>
+                            Do I need any experience?
+                        </span>
+                        <span x-text="open ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 pt-0 text-gray-700">
+                        Nope! Our trainers are ready to help with any and all skill levels. Whether you've never touched a dumbbell before or you're a pro, we've got you.
+                    </div>
+                </div>
+                <div x-data="{open: false}" class="item-faq">
+                    <button @click="open = !open" class="question-faq">
+                        <span>
+                            How long until I see results?
+                        </span>
+                        <span x-text="open ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 pt-0 text-gray-700">
+                        Thats the wrong mindset! With us, you'll end up at the destination of a great physique no matter what, but enjoy the journey along the way! Most see results around 3 months though.
+                    </div>
+                </div>
+                <div x-data="{open: false}" class="item-faq">
+                    <button @click="open = !open" class="question-faq">
+                        <span>
+                            Can I cancel or reschedule a session?
+                        </span>
+                        <span x-text="open ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 pt-0 text-gray-700">
+                        Of course! If you let us know at least 24 hours in advance, theres no charge. However, if within 24 hours, we will have to charge an additional 100 dollar cancellation fee.
+                    </div>
+                </div>
+                <div x-data="{open: false}" class="item-faq">
+                    <button @click="open = !open" class="question-faq">
+                        <span>
+                            What age groups do you train?
+                        </span>
+                        <span x-text="open ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 pt-0 text-gray-700">
+                        We train all age groups, but our clientele mainly include teens and adults.
+                    </div>
+                </div>
+                <div x-data="{open: false}" class="item-faq">
+                    <button @click="open = !open" class="question-faq">
+                        <span>
+                            What type of training do you offer?
+                        </span>
+                        <span x-text="open ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 pt-0 text-gray-700">
+                        Our team is well equipped to help with whatever you need. As national level athletes, we can provide plyometric, explosive, and strength advice in addition to general weightlifting.
+                    </div>
+                </div>
+            </div>
+            <!--Accordian End-->
+        </div>
+    </body>
+</html>

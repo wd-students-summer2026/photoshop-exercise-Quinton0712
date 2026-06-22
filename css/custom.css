@@ -1,0 +1,55 @@
+.info-card {
+    border: 1px solid gainsboro;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+}
+
+.button-main {
+    background-color: darkslategray;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+}
+
+.button-carousel {
+    background-color: white;
+}
+
+.button-carousel:hover {
+    background-color: whitesmoke;
+}
+
+.item-faq {
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.question-faq {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.background-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-modal {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    max-width: 28rem;
+    margin: 0 1rem;
+    box-shadow: 0 20px 25px -5px gray;
+}
